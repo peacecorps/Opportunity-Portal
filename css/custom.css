@@ -3,7 +3,13 @@ body {
  /* body padding for fixed top nav */
 }
 
-/* Nav Bar */
+/* FONTS */
+
+H1, H2, H3, H4, H5, H6{
+	color: #00808D;
+}
+
+/* NAV BAR */
 
 .navbar-inverse {
 	background-color: ##3A2B1A
@@ -17,9 +23,13 @@ body {
 	color: #F15D07;
 }
 
-/* Slider */
+/* SLIDER */
 
-/* Featurette */
+.carousel-caption h1 {
+	color:#fff;
+}
+
+/* FEATURETTE */
 
 .featurette-divider {
 	margin: 40px 0;

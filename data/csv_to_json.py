@@ -2,14 +2,11 @@ import pandas as pd
 import json
 
 
-df = pd.read_csv('data/pc.csv')
+df = pd.read_csv('data/pc.csv',encoding = "ISO-8859-1")
 jobs = []
 
 for row_idx, row in df.iterrows():
     job = {}
-    print row_idx
-    if row_idx > 2:
-        break
     job['current_req_status'] = row['CURRENT REQ STATUS']
     job['FY'] = row['FY']
     job['Q'] = row['Q']

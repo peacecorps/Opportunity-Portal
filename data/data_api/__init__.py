@@ -31,6 +31,7 @@ def all_jobs():
 
 
 @app.route('/get_jobs')
+@support_jsonp
 def get_jobs():
     specs = request.args
 

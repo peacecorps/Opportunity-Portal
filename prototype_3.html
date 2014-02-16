@@ -16,6 +16,11 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/prototype_3.css" rel="stylesheet">
     <!-- Custom CSS for the 'One Page Wonder' Template -->
+
+        <script type="text/javascript">var switchTo5x=true;</script> 
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "0632f4ec-e15d-41e8-b4e1-eaee53a4038b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
 </head>
 
 <body ng-controller="Prototype3Ctrl">
@@ -37,6 +42,7 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="about.html">About</a></li>
                                 <li class="active"><a href="explore.html">Explore</a></li>
+                                <li><a href="apply.html">Apply</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
@@ -173,9 +179,17 @@
             <br>
             <h4>Living conditions</h4>
             <p>{{data.currJob['live_cond']}}<span ng-show="!data.currJob.live_cond">TBD</span>
-            <p>{{data.currJob['live_cond_comm']}}<span ng-show="!data.currJob.live_cond_comm">TBD</span>    
 
-        </div>
+
+            <p>{{data.currJob['live_cond_comm']}}<span ng-show="!data.currJob.live_cond_comm">TBD</span>
+            <br>
+            <br>
+                <a href="http://www.peacecorps.gov/apply/" class="btn btn-primary btn-lg active" role="button">Apply</a>  
+
+                    <span class='st_facebook_large' displayText='Facebook'></span>
+    <span class='st_twitter_large' displayText='Tweet'></span>
+    <span class='st_email_large' displayText='Email'></span>
+
 
     </div>
    

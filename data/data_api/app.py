@@ -7,6 +7,8 @@ def test():
     return render_template('index.html')
     return 'Test: OK'
 
+
+
 # @app.route('/')
 # def search_job():
 #     # content = request.json
@@ -15,7 +17,6 @@ def test():
 @app.route('/foo')
 def foo():
     return "hi"
-    # 
 
 
 

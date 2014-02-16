@@ -38,7 +38,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="about.html">About</a></li>
-                    <li><a href="apply.html">Apply</a></li>
+                    <li><a href="apply.html">Explore</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -106,9 +106,15 @@
   </div>
   <div class="modal-body">
   </div>
+  
   <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <!--
+    <button type ="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button type="button" class="btn btn-primary" href="http://www.peacecorps.gov/">Apply</button>
+  -->
+    <a href="http://www.peacecorps.gov/apply/" class="btn btn-primary btn-lg active" role="button">Apply</a>
   </div>
+
 </div>
 
     <!-- Bootstrap core JavaScript
@@ -168,9 +174,10 @@
     var result = result_data[req_id];
     var detailHtml = "";
     //detailHtml += "<h1>"+ req_id + "</h1>";
-    $("#myModalLabel").html("<h1> Title:"+ result.title + "</h1>");
-    detailHtml += "<h2> Location:"+ result.location + "</h1>";
-    detailHtml += "<h3> Sector:"+ result.sector + "</h1>";
+    $("#myModalLabel").html("<h3>"+ result.title + "</h3>");
+    detailHtml += "<h4> Location: </h4> <p>"+ result.location + "</p>";
+    detailHtml += "<h4> Sector: </h4> <p>" + result.sector + "</p>";
+    detailHtml += "<h4> Project Description: </h4> <p>"+result.proj_desc+"</p>";
     //detailHtml += "<h3>"+ result.proj_desc +"</h3>";
     $(".modal-body").html(detailHtml);
   }

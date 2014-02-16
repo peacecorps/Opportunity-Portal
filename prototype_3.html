@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>peace corp</title>
+
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css' rel='stylesheet' />
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/prototype_3.css" rel="stylesheet">
+    <!-- Custom CSS for the 'One Page Wonder' Template -->
+</head>
+
+<body ng-controller="Prototype3Ctrl">
+    
+    <div class="row">
+        <div class="col-md-3 well left-pane">
+            <h4>Sector</h4> 
+                <button class="btn btn-sm" ng-class="{active: (state.sectors.indexOf('Agriculture') != -1)}" ng-click="toggleSector('Agriculture')">Agriculture</button>
+                <button class="btn btn-sm" ng-click="toggleSector('Business')">Business</button>
+                <button class="btn btn-sm" ng-click="toggleSector('Education')">Education</button>
+                <button class="btn btn-sm" ng-click="toggleSector('Environment')">Environment</button>
+                <button class="btn btn-sm" ng-click="toggleSector('Health')">Health</button>
+                <button class="btn btn-sm" ng-click="toggleSector('Youth')">Youth</button>
+           
+
+            <h4>Countries</h4>
+
+        </div>
+        <div class="col-md-4">
+            <div ng-repeat="job in data.jobs">
+                <h3>{{job.title}}</h3>
+                <p>
+                    {{job['proj_desc']}}
+                </p>
+                <hr>
+            </div>
+        </div>
+        <div class="col-md-5">
+            shiny
+        </div>
+
+    </div>
+   
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+    <script src="js/prototype_3.js"></script>
+    <!--<script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>-->
+</body>
+
+</html>

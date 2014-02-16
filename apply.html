@@ -16,6 +16,7 @@
     <link href="css/one-page-wonder.css" rel="stylesheet">
     <link href="css/modern-business.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -37,7 +38,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="about.html">About</a></li>
-                    <li><a href="apply.html">Apply</a></li>
+                    <li><a href="apply.html">Explore</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -59,38 +60,47 @@
       </div>
 
       <h3> Choose your country: </h3>
-
-      <!--
-    <div class="btn-group">
-      <button type="button" class="btn btn-default">Uganda</button>
-      <button type="button" class="btn btn-default">Ghana</button>
-    </div>
-  -->
       <div class="pref">
-        <input class="prefplace" type="checkbox" value="Uganda">Uganda
-        <input class="prefplace" type="checkbox" value="Ghana">Ghana
+        <input class="prefplace" type="checkbox" value="Albania">Albania<br>
+        <input class="prefplace" type="checkbox" value="Armenia">Armenia<br>
+        <input class="prefplace" type="checkbox" value="Azerbaijan">Azerbaijan<br>
+        <input class="prefplace" type="checkbox" value="Belize">Belize<br>
+        <input class="prefplace" type="checkbox" value="Benin">Benin<br>
+        <input class="prefplace" type="checkbox" value="Burkina Faso">Burkina Faso<br>
+        <input class="prefplace" type="checkbox" value="Botswana">Botswana<br>
+        <input class="prefplace" type="checkbox" value="Cambodia">Cambodia<br>
+        <input class="prefplace" type="checkbox" value="Cameroon">Cameroon<br>
+        <input class="prefplace" type="checkbox" value="China">China<br>
+        <input class="prefplace" type="checkbox" value="Colombia">Colombia<br>
+        <input class="prefplace" type="checkbox" value="Costa Rica">Costa Rica<br>
+        <input class="prefplace" type="checkbox" value="Dominican Republic">Dominican Republic<br>      
       </div>
-      <br>
-      <br>
-
       <h3> Choose your sector: </h3>
 
       <div class="pref">
-        <input class="prefsector" type="checkbox" value="Health">Health
-        <input class="prefsector" type="checkbox" value="Education">Education
-      </div>
-      <br>
-      <br>
+        <input class="prefsector" type="checkbox" value="Education" id="sector_education"><label for="sector_education">Education </label>
+        <input class="prefsector" type="checkbox" value="Agriculture" id="sector_agriculture"><label for="sector_agriculture">Agriculture </label>
+        <input class="prefsector" type="checkbox" value="Business" id="sector_business"><label for="sector_business">Business </label>
+        <input class="prefsector" type="checkbox" value="Environment" id="sector_environment"><label for="sector_environment">Environment </label>
+        <input class="prefsector" type="checkbox" value="Health" id="sector_health"><label for="sector_health">Health </label>
+        <input class="prefsector" type="checkbox" value="Youth" id="sector_youth"><label for="sector_youth">Youth</label>
 
+      </div>
+
+
+      <br/>
       <div class="btn-group">
         <button id="sendpref" type="button" class="btn btn-default">Submit</button>
       </div>
 
-
-
-
-    <div class="result">
-    </div>
+    <hr/>
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Results</div>
+      <!-- Table -->
+      <div class="result-table">
+      </div>
+   </div>
 
 </div>
 <div class="col-lg-3">&nbsp;</div><!-- end of col-lg-3 -->
@@ -104,15 +114,34 @@
     </div><!-- end of col-log-12 -->
         <!-- /END OF FOOTER -->
 
-    </div><!-- /.container -->
+</div><!-- /.container -->
 
+<!-- Modal -->
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+   <h3 id="myModalLabel"></h3>
+  </div>
+  <div class="modal-body">
+  </div>
+  
+  <div class="modal-footer">
+    <!--
+    <button type ="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button type="button" class="btn btn-primary" href="http://www.peacecorps.gov/">Apply</button>
+  -->
+    <a href="http://www.peacecorps.gov/apply/" class="btn btn-primary btn-lg active" role="button">Apply</a>
+  </div>
+
+</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./form_files/jquery.min.js"></script>
-    <script src="./form_files/bootstrap.min.js"></script>
+    <script src="./js/jquery-1.10.2.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
     <script>
+    var result_data = {};
     var country = "";
     var sector = "";
     $("#sendpref").click(function(){
@@ -136,24 +165,43 @@
       })
           console.log(sector);
     });
-      console.log(country);
-      
-
-
+    console.log(country);
 
 
 
       $.getJSON("http://idhack.iis-dev.seas.harvard.edu/get_jobs?callback=?",{"location":country,"sector":sector},function(result){
         console.log(result);
+        //var result_html = "<div class='result-table-row'><div class='result-table-header'>#</div><div class='result-table-header'>Title</div></div>";
         var result_html = "";
         for (obj in result.data){
-          result_html += result.data[obj].title + "  ";
+          // display link          
+          var functiontext = 'displayDetail("' + result.data[obj]["REQ ID"] + '")';
+          result_html += "<a href='#myModal' data-toggle='modal' onclick='" + functiontext + "' ><div class='result-table-row'><div class='result-table-cell-1'>" + result.data[obj]["REQ ID"] + "</div><div class='result-table-cell-2'>" + result.data[obj]["title"] + "</div></div></a> ";
+
+          // create object
+          result_data[result.data[obj]["REQ ID"]] = result.data[obj];
         }
-        $(".result").html(result_html);
+        $(".result-table").html(result_html);
       });
+   });
+    // end submit search
+
+  function displayDetail(req_id) {
+    console.log(req_id);
+    console.log(result_data[req_id]);
+    var result = result_data[req_id];
+    var detailHtml = "";
+    //detailHtml += "<h1>"+ req_id + "</h1>";
+    $("#myModalLabel").html("<h3>"+ result.title + "</h3>");
+    detailHtml += "<h4> Location: </h4> <p>"+ result.location + "</p>";
+    detailHtml += "<h4> Sector: </h4> <p>" + result.sector + "</p>";
+    detailHtml += "<h4> Project Description: </h4> <p>"+result.proj_desc+"</p>";
+    //detailHtml += "<h3>"+ result.proj_desc +"</h3>";
+    $(".modal-body").html(detailHtml);
+  }
 
 
-    });
+
 
     </script>
   

@@ -7,10 +7,46 @@ and open the template in the editor.
 <html>
     <head>
         <title>TODO supply a title</title>
-        <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width">
     </head>
     <body>
-        <div>TODO write content</div>
+    	<div class="result_detail"></div>
+        <div class="result">TODO write content</div>
+        <button type="button" id="searchbtn">
+        		click me
+        </button>
+        <script src="js/jquery-1.10.2.js"></script>
+        <script type="text/javascript">
+        var result_data = {};
+
+        $("#searchbtn").click(function(event){
+	      $.getJSON("http://idhack.iis-dev.seas.harvard.edu/all_jobs?callback=?",function(result){
+	        console.log(result);
+	        var result_html = "";
+	        for (obj in result.data){
+		            // display link          
+    	    		var functiontext = 'displayDetail("' + result.data[obj]["REQ ID"] + '")';
+    	    		result_html += "<a href='#'  onclick='" + functiontext + "' >" + result.data[obj]["REQ ID"] + "</a> ";
+
+	    	    	// create object
+    	    		result_data[result.data[obj]["REQ ID"]] = result.data[obj];
+	        }
+	        $(".result").html(result_html);
+	      });
+	  	});
+	  	function displayDetail(req_id) {
+	  		console.log(req_id);
+	  		console.log(result_data[req_id]);
+	  		var result = result_data[req_id];
+	  		var detailHtml = "";
+	  		//detailHtml += "<h1>"+ req_id + "</h1>";
+	  		detailHtml += "<h1> Title:"+ result.title + "</h1>";
+	  		detailHtml += "<h2> Location:"+ result.location + "</h1>";
+	  		detailHtml += "<h3> Sector:"+ result.sector + "</h1>";
+	  		//detailHtml += "<h3>"+ result.proj_desc +"</h3>";
+	  		$(".result_detail").html(detailHtml);
+	  	}
+
+        </script>
     </body>
 </html>

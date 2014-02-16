@@ -57,6 +57,12 @@ body {
 
 .select-active{
 	background: #aaa;
+	padding: 0.2em;
+	cursor:pointer;
+	border-radius: 1px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	line-height: 1em
 }
 
 .job-title{

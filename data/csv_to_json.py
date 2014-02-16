@@ -11,7 +11,7 @@ for row_idx, row in df.iterrows():
     job['FY'] = row['FY']
     job['Q'] = row['Q']
     job['AA'] = row['AA']
-    job['POST'] = row['POST']
+    job['location'] = row['POST']
     job['REQ ID'] = row['REQ ID']
     job['num_vol'] = row['# VOL REQUESTED']
     job['title'] = row['PROJECT TITLE']

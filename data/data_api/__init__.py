@@ -1,6 +1,8 @@
 from flask import Flask, request, render_template, jsonify, current_app
 from functools import wraps
-import json
+import json, math
+
+DB_KEYS = ['location', 'sector']
 
 app = Flask(__name__)
  
@@ -30,18 +32,29 @@ def all_jobs():
     return jsonify({'data':jobs})
 
 
-# @app.route('/get_jobs')
-# def get_jobs():
-#     all_jobs = None
-#     with open('data/pc.json' as f):
-#         all_jobs = json.load(f)
-#     sifter = lambda
-#     jobs = filter(sifter, all_jobs)
+@app.route('/get_jobs')
+@support_jsonp
+def get_jobs():
+    specs = request.args
 
-# @app.route('/')
-# def search_job():
-#     # content = request.json
-#     return 'search_job'
+    # ImmutableMultiDict([ ('location', u'Uganda'), ('_', u'1392546022396')])
+    all_jobs = None
+    with open('data/pc.json') as f:
+        all_jobs = json.load(f)
+
+
+    def sifter(job):
+        for k, v in specs.items():
+            print key
+            if (key in DB_KEYS) and (not v == ''):
+                values = v.split('+')
+                if (not job[k]) or (job[k] not in v):
+                    return False
+        return True
+
+    jobs = filter(sifter, all_jobs)
+    return jsonify({'data':jobs})
+
 
 @app.route('/foo')
 def foo():

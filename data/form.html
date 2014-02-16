@@ -107,8 +107,10 @@
     <script src="./form_files/jquery.min.js"></script>
     <script src="./form_files/bootstrap.min.js"></script>
     <script>
+    var country = "";
+    var sector = "";
     $("#sendpref").click(function(){
-      var country = "";
+      //var country = "";
       $(".prefplace:checked").each(function(i){
         if(country==""){
           country = $(this).val();
@@ -117,7 +119,7 @@
             country = country + "+" + $(this).val();
           }
 
-      var sector = "";
+      //var sector = "";
       $(".prefsector:checked").each(function(i){
         if(sector==""){
           sector = $(this).val();
@@ -125,16 +127,17 @@
           {
             sector = sector + "+" + $(this).val();
           }
-              
+      })
+          console.log(sector);
     });
       console.log(country);
-      console.log(country);
+      
 
 
 
 
 
-      $.getJSON("http://idhack.iis-dev.seas.harvard.edu/all_jobs?callback=?",{"location":country},function(result){
+      $.getJSON("http://idhack.iis-dev.seas.harvard.edu/get_jobs?callback=?",{"location":country,"sector":sector},function(result){
         console.log(result);
         var result_html = "";
         for (obj in result.data){

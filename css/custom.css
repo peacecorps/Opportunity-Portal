@@ -20,9 +20,7 @@ a:hover{
 }
 /* NAV BAR */
 
-.navbar-inverse {
-	background-color: ##3A2B1A
-	}
+
 
 .navbar-inverse .navbar-nav > li > a,.navbar-inverse .navbar-brand {
 	color: #F9F1DA;
@@ -42,4 +40,8 @@ a:hover{
 
 .featurette-divider {
 	margin: 40px 0;
+}
+
+.text-muted {
+color: #26A2AF;
 }

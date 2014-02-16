@@ -36,7 +36,6 @@ def all_jobs():
 @support_jsonp
 def get_jobs():
     specs = request.args
-    print specs['location']
 
     # ImmutableMultiDict([ ('location', u'Uganda'), ('_', u'1392546022396')])
     all_jobs = None
@@ -46,6 +45,7 @@ def get_jobs():
 
     def sifter(job):
         for k, v in specs.items():
+            print key
             if (key in DB_KEYS) and (not v == ''):
                 values = v.split('+')
                 if (not job[k]) or (job[k] not in v):

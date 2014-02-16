@@ -40,4 +40,8 @@ function Prototype3Ctrl($scope, $http){
             console.log(status);
         });;
     };
+
+    $scope.selectJob = function(aa){
+        alert(aa);
+    };
 }

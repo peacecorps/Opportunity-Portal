@@ -1,5 +1,4 @@
 body {
-	background-color: #ccc;
 	margin: 0;
 	padding: 0;
 }
@@ -36,5 +35,10 @@ body {
 .btn-active{
 	color:black;
 }
+
+.job-item{
+	border-bottom: 1px solid #ccc;
+}
+
 
 

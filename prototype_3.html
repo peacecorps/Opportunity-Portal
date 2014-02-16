@@ -35,16 +35,17 @@
 
         </div>
         <div class="col-md-4">
-            <div ng-repeat="job in data.jobs">
-                <h3>{{job.title}}</h3>
+            <div ng-repeat="job in data.jobs" class="job-item">
+                <h4><a ng-click="selectJob(job.AA)">{{job.title}}</a></h4>
                 <p>
-                    {{job['proj_desc']}}
+                    {{job.location}}
                 </p>
-                <hr>
+                
             </div>
         </div>
         <div class="col-md-5">
-            shiny
+
+            <h3>{{data.currJob.title}}</h3>
         </div>
 
     </div>

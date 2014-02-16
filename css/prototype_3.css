@@ -1,6 +1,5 @@
 body {
-	background-color: #ccc;
-	margin: 0;
+	margin-top: 50px;
 	padding: 0;
 }
 #map { 
@@ -35,6 +34,34 @@ body {
 
 .btn-active{
 	color:black;
+}
+
+.job-item{
+	border-bottom: 1px solid #ccc;
+}
+
+.left-pane{
+	padding: 20px;
+}
+
+
+.select-item{
+	background: #ccc;
+	padding: 0.2em;
+	cursor:pointer;
+	border-radius: 1px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	line-height: 1em
+}
+
+.select-active{
+	background: #aaa;
+}
+
+.job-title{
+	cursor: pointer;
+	
 }
 
 

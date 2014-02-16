@@ -81,9 +81,15 @@ function Prototype3Ctrl($scope, $http){
         for(var i = 0; i < $scope.data.jobs.length; i++){
             if(aa == $scope.data.jobs[i].AA){
                 $scope.data.currJob = $scope.data.jobs[i];
+                console.log($scope.data.jobs[i]);
+                geocoder.query(String($scope.data.jobs[i].location), showMap);
+                
                 break;
             }
         }
         
     };
 }
+function showMap(err, data) {
+             map.fitBounds(data.lbounds);
+        }

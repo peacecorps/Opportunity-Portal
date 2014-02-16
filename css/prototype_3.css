@@ -3,15 +3,21 @@ body {
 	padding: 0;
 }
 #map { 
-	/*position:absolute; top:0; bottom:0; width:100%; */}
+	position:fixed; top:0; bottom:0; width:100%; */}
 
 .main-container {
 	height:800px;
 }
+.col-md-4, .col-md-5 {
+	background-color: rgba(255,255,255,0.8);
+}
+.col-md-4 {
+	padding-left:10px;
+}
 .main-display {
 	margin-top: 30px;
 	border-radius: 20px;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.8);
 	color: white;
 }
 .sub-nav, .main-nav {

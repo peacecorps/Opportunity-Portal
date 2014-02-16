@@ -1,0 +1,8 @@
+body {
+  padding-top: 0px;
+ /* body padding for fixed top nav */
+}
+
+.featurette-divider {
+	margin: 40px 0;
+}

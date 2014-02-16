@@ -1,9 +1,9 @@
 function Prototype3Ctrl($scope, $http){
     $scope.data = {};
     $scope.state = {};
-    $scope.state.sectors = [];
-    $scope.state.regions = [];
-    $scope.state.countries = [];
+    $scope.state.sectors = ['Business', 'Environment'];
+    $scope.state.regions = ['South Africa'];
+    $scope.state.countries = ['Ethiopia', 'Kenya'];
 
     $http({
         url: "http://idhack.iis-dev.seas.harvard.edu/get_jobs" ,
@@ -25,7 +25,7 @@ function Prototype3Ctrl($scope, $http){
 
         }
 
-        
+
     };
 
     $scope.toggleSector = function(sect){

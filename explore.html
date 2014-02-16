@@ -293,7 +293,8 @@
     <script src="js/bootstrap.js"></script>
     <script>
         var geocoder = L.mapbox.geocoder('ktu219.h9km2la1');
-        var map = L.mapbox.map('map', 'ktu219.h9km2la1');
+        var map = L.mapbox.map('map', 'ktu219.h9km2la1', {zoomControl: false});
+
         $(".map_link").click(function(){
             console.log($(this).attr("place"));
             geocoder.query($(this).attr("place"), showMap);

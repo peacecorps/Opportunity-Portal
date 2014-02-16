@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template, jsonify, current_app
 from functools import wraps
-import json
+import json, math
 
 app = Flask(__name__)
  
@@ -30,18 +30,28 @@ def all_jobs():
     return jsonify({'data':jobs})
 
 
-# @app.route('/get_jobs')
-# def get_jobs():
-#     all_jobs = None
-#     with open('data/pc.json' as f):
-#         all_jobs = json.load(f)
-#     sifter = lambda
-#     jobs = filter(sifter, all_jobs)
+@app.route('/get_jobs')
+def get_jobs():
+    specs = request.args
 
-# @app.route('/')
-# def search_job():
-#     # content = request.json
-#     return 'search_job'
+    all_jobs = None
+    with open('data/pc.json') as f:
+        all_jobs = json.load(f)
+
+
+    def sifter(job):
+        for k, v in specs.items():
+            #make list
+            if not v == '':
+                values = v.split('+')
+                print job[k]
+                if (not job[k]) or (job[k] not in v):
+                    return False
+        return True
+
+    jobs = filter(sifter, all_jobs)
+    return jsonify({'data':jobs})
+
 
 @app.route('/foo')
 def foo():

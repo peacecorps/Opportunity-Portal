@@ -3,7 +3,9 @@ import json
 
 
 df = pd.read_csv('pc.csv',encoding = "ISO-8859-1")
+df = df.where((pd.notnull(df)), None)
 jobs = []
+
 
 for row_idx, row in df.iterrows():
     job = {}
@@ -12,6 +14,7 @@ for row_idx, row in df.iterrows():
     job['Q'] = row['Q']
     job['AA'] = row['AA']
     job['location'] = row['POST']
+    job['sector'] = row['SECTOR']
     job['REQ ID'] = row['REQ ID']
     job['num_vol'] = row['# VOL REQUESTED']
     job['title'] = row['PROJECT TITLE']

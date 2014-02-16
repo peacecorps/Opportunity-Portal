@@ -34,7 +34,7 @@ def all_jobs():
 @support_jsonp
 def get_jobs():
     specs = request.args
-
+    print specs
     all_jobs = None
     with open('data/pc.json') as f:
         all_jobs = json.load(f)
@@ -42,10 +42,8 @@ def get_jobs():
 
     def sifter(job):
         for k, v in specs.items():
-            #make list
             if not v == '':
                 values = v.split('+')
-                print job[k]
                 if (not job[k]) or (job[k] not in v):
                     return False
         return True

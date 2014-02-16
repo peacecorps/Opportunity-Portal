@@ -36,7 +36,9 @@ def all_jobs():
 @support_jsonp
 def get_jobs():
     specs = request.args
-    print specs
+    print specs['location']
+
+    # ImmutableMultiDict([ ('location', u'Uganda'), ('_', u'1392546022396')])
     all_jobs = None
     with open('data/pc.json') as f:
         all_jobs = json.load(f)

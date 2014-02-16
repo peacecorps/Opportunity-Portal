@@ -2,6 +2,8 @@ from flask import Flask, request, render_template, jsonify, current_app
 from functools import wraps
 import json, math
 
+DB_KEYS = ['location', 'sector']
+
 app = Flask(__name__)
  
 def support_jsonp(f):
@@ -42,7 +44,7 @@ def get_jobs():
 
     def sifter(job):
         for k, v in specs.items():
-            if not v == '':
+            if (key in DB_KEYS) and (not v == ''):
                 values = v.split('+')
                 if (not job[k]) or (job[k] not in v):
                     return False

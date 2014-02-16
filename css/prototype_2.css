@@ -1,0 +1,17 @@
+body {
+	background-color: #ccc;
+	margin: 0;
+	padding: 0;
+}
+#map { position:absolute; top:0; bottom:0; width:100%; }
+
+
+.main-display {
+	margin-left: 20px;
+}
+.sub-nav, .main-display {
+	margin-top: 30px;
+	background-color: rgba(0,0,0,0.5);
+	height:500px;
+	color: white;
+}

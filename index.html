@@ -7,18 +7,20 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Basic Company Template for Bootstrap 3</title>
+    <title>Peace Corps Opportunities</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS for the 'One Page Wonder' Template -->
     <link href="css/one-page-wonder.css" rel="stylesheet">
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -27,17 +29,59 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">Start Bootstrap</a>
+                <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                <a class="navbar-brand" href="index.html">Modern Business</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="#about">About</a>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="about.html">About</a>
                     </li>
-                    <li><a href="#services">Services</a>
+                    <li><a href="services.html">Services</a>
                     </li>
-                    <li><a href="#contact">Contact</a>
+                    <li><a href="contact.php">Contact</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="portfolio-1-col.html">1 Column Portfolio</a>
+                            </li>
+                            <li><a href="portfolio-2-col.html">2 Column Portfolio</a>
+                            </li>
+                            <li><a href="portfolio-3-col.html">3 Column Portfolio</a>
+                            </li>
+                            <li><a href="portfolio-4-col.html">4 Column Portfolio</a>
+                            </li>
+                            <li><a href="portfolio-item.html">Single Portfolio Item</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blog-home-1.html">Blog Home 1</a>
+                            </li>
+                            <li><a href="blog-home-2.html">Blog Home 2</a>
+                            </li>
+                            <li><a href="blog-post.html">Blog Post</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="full-width.html">Full Width Page</a>
+                            </li>
+                            <li><a href="sidebar.html">Sidebar Page</a>
+                            </li>
+                            <li><a href="faq.html">FAQ</a>
+                            </li>
+                            <li><a href="404.html">404</a>
+                            </li>
+                            <li><a href="pricing.html">Pricing Table</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -46,17 +90,45 @@
         <!-- /.container -->
     </nav>
 
-    <div class="header-image">
+    <div id="myCarousel" class="carousel slide"> 
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
 
-        <div class="headline">
-            <div class="container">
-                <h1>One Page Wonder</h1>
-                <h2>Will Knock Your Socks Off</h2>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+                <div class="carousel-caption">
+                    <h1>Modern Business - A Bootstrap 3 Template</h1>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+                <div class="carousel-caption">
+                    <h1>Ready to Style &amp; Add Content</h1>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                <div class="carousel-caption">
+                    <h1>Additional Layout Options at <a href="http://startbootstrap.com">http://startbootstrap.com</a>
+                    </h1>
+                </div>
             </div>
         </div>
 
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
     </div>
-    <!-- /header-image -->
 
     <div class="container">
 
@@ -101,7 +173,7 @@
 
         <!-- FOOTER -->
         <footer>
-            <p>Copyright &copy; Company 2013</p>
+            <p>Copyright &copy; Peace Corps 2014</p>
         </footer>
         <!-- /END OF FOOTER -->
 
@@ -111,6 +183,7 @@
     <!-- JavaScript -->
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/modern-business.js"></script>
 
 </body>
 

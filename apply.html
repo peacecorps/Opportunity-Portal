@@ -1,62 +1,57 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)http://getbootstrap.com/examples/starter-template/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en">
+
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="http://getbootstrap.com/assets/ico/favicon.ico">
 
-    <title>Opportunities Search</title>
+    <title>Peace Corps Opportunities</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  <style type="text/css">
-  .result {
-    background-color: black;
-    color: white;
-  }
-</style>
-
+    <!-- Custom CSS for the 'One Page Wonder' Template -->
+    <link href="css/one-page-wonder.css" rel="stylesheet">
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
 </head>
 
-  <body style="">
+<body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="http://getbootstrap.com/examples/starter-template/#">Project name</a>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                <a class="navbar-brand" href="index.html">Peace Corps Opportunities Portal</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="apply.html">Apply</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="http://getbootstrap.com/examples/starter-template/#">Home</a></li>
-            <li><a href="http://getbootstrap.com/examples/starter-template/#about">About</a></li>
-            <li><a href="http://getbootstrap.com/examples/starter-template/#contact">Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
+        <!-- /.container -->
+    </nav>
+
 
     <div class="container">
+
+       <div class="col-lg-3">&nbsp;</div><!-- end of col-lg-3 -->
+        
+        <div class="col-lg-6"> 
 
       <div class="starter-template">
         <h1>PeaceCorps Opportunity Search</h1>
@@ -97,6 +92,17 @@
     <div class="result">
     </div>
 
+</div>
+<div class="col-lg-3">&nbsp;</div><!-- end of col-lg-3 -->
+
+<!-- FOOTER -->
+    <div class="col-lg-12">
+            <footer>
+                <hr>
+            <p>Copyright &copy; Peace Corps 2014</p>
+        </footer>
+    </div><!-- end of col-log-12 -->
+        <!-- /END OF FOOTER -->
 
     </div><!-- /.container -->
 
@@ -104,8 +110,8 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./form_files/jquery.min.js"></script>
-    <script src="./form_files/bootstrap.min.js"></script>
+    <script src="./js/jquery-1.10.2.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
     <script>
     var country = "";
     var sector = "";

@@ -2,7 +2,7 @@ function Prototype3Ctrl($scope, $http){
     $scope.data = {};
     $scope.state = {};
     $scope.state.sectors = [];
-
+    $scope.state.regions = [];
 
     $http({
         url: "http://idhack.iis-dev.seas.harvard.edu/get_jobs" ,
@@ -25,13 +25,24 @@ function Prototype3Ctrl($scope, $http){
         $scope.getJobs();
     };
 
+    $scope.toggleRegion = function(reg){
+        var sIdx = $scope.state.regions.indexOf(reg);
+        if( sIdx == -1){
+            $scope.state.regions.push(reg);
+        }else{
+            $scope.state.regions.splice(sIdx,1);
+        }
+        $scope.getJobs();
+    };
+
     $scope.getJobs = function(){
-        console.log($scope.state.sectors);
+        console.log($scope.state.regions);
         $http({
             url: "http://idhack.iis-dev.seas.harvard.edu/get_jobs" ,
             method: "GET",
             params: {sector: $scope.state.sectors.join("+")}
         }).success(function(data){
+            $scope.data.jobs = null;
             $scope.data.jobs = data.data;
             // alert(data.data[0]['title']);
         }).error(function(data, status, headers, config) {
@@ -42,6 +53,12 @@ function Prototype3Ctrl($scope, $http){
     };
 
     $scope.selectJob = function(aa){
-        alert(aa);
+        for(var i = 0; i < $scope.data.jobs.length; i++){
+            if(aa == $scope.data.jobs[i].AA){
+                $scope.data.currJob = $scope.data.jobs[i];
+                break;
+            }
+        }
+        
     };
 }

@@ -11,9 +11,19 @@ function Prototype3Ctrl($scope, $http){
     }).success(function(data){
         $scope.data.jobs = data.data;
         $scope.data.currJob = data.data[0];
+        updateStat();
         $scope.data.jobs[0].selected = true;
+
         // alert(data.data[0]['title']);
     });
+    var updateStat = function(){
+        for (var i = 0; i < $scope.data.jobs.length; i++){
+            $scope.data.jobs[i].rural = (Math.random() > 0.2);
+            $scope.data.jobs[i].hot = (Math.random() > 0.5);
+            $scope.data.jobs[i].cold = (Math.random() > 0.5);
+
+        }
+    };
 
     $scope.toggleSector = function(sect){
         var sIdx = $scope.state.sectors.indexOf(sect)
@@ -44,6 +54,7 @@ function Prototype3Ctrl($scope, $http){
         }).success(function(data){
             $scope.data.jobs = null;
             $scope.data.jobs = data.data;
+            updateStat();
             // alert(data.data[0]['title']);
         }).error(function(data, status, headers, config) {
     // called asynchronously if an error occurs

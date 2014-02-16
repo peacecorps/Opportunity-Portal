@@ -63,7 +63,7 @@
         <p class="lead">Use this form to find PeaceCorp opportunities related to your interests.</p>
       </div>
 
-      <p> Choose your country:</p>
+      <h3> Choose your country: </h3>
 
       <!--
     <div class="btn-group">
@@ -71,13 +71,26 @@
       <button type="button" class="btn btn-default">Ghana</button>
     </div>
   -->
-    <input type="checkbox" id="place_uganda">Uganda
-    <input type="checkbox" id="place_ghana">Ghana
-    <br>
-    <br>
-    <div class="btn-group">
-      <button id="sendpref" type="button" class="btn btn-default">Submit</button>
-    </div>
+      <div class="pref">
+        <input class="prefplace" type="checkbox" value="Uganda">Uganda
+        <input class="prefplace" type="checkbox" value="Ghana">Ghana
+      </div>
+      <br>
+      <br>
+
+      <h3> Choose your sector: </h3>
+
+      <div class="pref">
+        <input class="prefsector" type="checkbox" value="Health">Health
+        <input class="prefsector" type="checkbox" value="Education">Education
+      </div>
+      <br>
+      <br>
+
+      <div class="btn-group">
+        <button id="sendpref" type="button" class="btn btn-default">Submit</button>
+      </div>
+
 
 
 
@@ -95,22 +108,33 @@
     <script src="./form_files/bootstrap.min.js"></script>
     <script>
     $("#sendpref").click(function(){
-      var place_uganda = $("#place_uganda").is(':checked');
-      var place_ghana = $("#place_ghana").is(':checked');
-      
-      /*
-      $.ajax({
-        //url: "http://idhack.iis-dev.seas.harvard.edu/all_jobs", 
-        url: 'http://www.google.com/calendar/feeds/developer-calendar@google.com/public/full?alt=json-in-script&callback=insertAgenda&orderby=starttime&max-results=15&singleevents=true&sortorder=ascending&futureevents=true',
-        success: function(data){
-          alert("Hey!");
-          console.log(data);
-          $( ".result" ).html( data );
-        },
-        dataType: "json"
-      });
-      */
-      $.getJSON("http://idhack.iis-dev.seas.harvard.edu/all_jobs?callback=?",function(result){
+      var country = "";
+      $(".prefplace:checked").each(function(i){
+        if(country==""){
+          country = $(this).val();
+        } else 
+          {
+            country = country + "+" + $(this).val();
+          }
+
+      var sector = "";
+      $(".prefsector:checked").each(function(i){
+        if(sector==""){
+          sector = $(this).val();
+        } else 
+          {
+            sector = sector + "+" + $(this).val();
+          }
+              
+    });
+      console.log(country);
+      console.log(country);
+
+
+
+
+
+      $.getJSON("http://idhack.iis-dev.seas.harvard.edu/all_jobs?callback=?",{"location":country},function(result){
         console.log(result);
         var result_html = "";
         for (obj in result.data){

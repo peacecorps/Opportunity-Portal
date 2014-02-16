@@ -9,6 +9,15 @@ H1, H2, H3, H4, H5, H6{
 	color: #00808D;
 }
 
+/* LINKS */
+
+a{
+	color:#F15D07;
+}
+
+a:hover{
+	color:#F9F1DA;
+}
 /* NAV BAR */
 
 .navbar-inverse {

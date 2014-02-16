@@ -24,7 +24,14 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  <style type="text/css"></style></head>
+  <style type="text/css">
+  .result {
+    background-color: black;
+    color: white;
+  }
+</style>
+
+</head>
 
   <body style="">
 
@@ -56,36 +63,39 @@
         <p class="lead">Use this form to find PeaceCorp opportunities related to your interests.</p>
       </div>
 
+      <h3> Choose your country: </h3>
+
+      <!--
+    <div class="btn-group">
+      <button type="button" class="btn btn-default">Uganda</button>
+      <button type="button" class="btn btn-default">Ghana</button>
+    </div>
+  -->
+      <div class="pref">
+        <input class="prefplace" type="checkbox" value="Uganda">Uganda
+        <input class="prefplace" type="checkbox" value="Ghana">Ghana
+      </div>
+      <br>
+      <br>
+
+      <h3> Choose your sector: </h3>
+
+      <div class="pref">
+        <input class="prefsector" type="checkbox" value="Health">Health
+        <input class="prefsector" type="checkbox" value="Education">Education
+      </div>
+      <br>
+      <br>
+
+      <div class="btn-group">
+        <button id="sendpref" type="button" class="btn btn-default">Submit</button>
+      </div>
 
 
 
 
-      <!-- Bootstrap trigger to open modal https://gist.github.com/havvg/3226804 -->
-<a data-toggle="modal" href="#rating-modal">Write a Review</a>
- 
-<div class="hide fade modal" id="rating-modal">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal">×</button>
-    <h2>Your Review</h2>
-  </div>
- 
-  <div class="modal-body">
-    <!-- The async form to send and replace the modals content with its response -->
-    <form class="form-horizontal well" data-async data-target="#rating-modal" action="/some-endpoint" method="POST">
-      <fieldset>
-        <!-- form content -->
-      </fieldset>
-    </form>
-  </div>
- 
-  <div class="modal-footer">
-    <a href="#" class="btn" data-dismiss="modal">Cancel</a>
-  </div>
-</div>
-
-
-
-
+    <div class="result">
+    </div>
 
 
     </div><!-- /.container -->
@@ -96,6 +106,47 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="./form_files/jquery.min.js"></script>
     <script src="./form_files/bootstrap.min.js"></script>
+    <script>
+    $("#sendpref").click(function(){
+      var country = "";
+      $(".prefplace:checked").each(function(i){
+        if(country==""){
+          country = $(this).val();
+        } else 
+          {
+            country = country + "+" + $(this).val();
+          }
+
+      var sector = "";
+      $(".prefsector:checked").each(function(i){
+        if(sector==""){
+          sector = $(this).val();
+        } else 
+          {
+            sector = sector + "+" + $(this).val();
+          }
+              
+    });
+      console.log(country);
+      console.log(country);
+
+
+
+
+
+      $.getJSON("http://idhack.iis-dev.seas.harvard.edu/all_jobs?callback=?",{"location":country},function(result){
+        console.log(result);
+        var result_html = "";
+        for (obj in result.data){
+          result_html += result.data[obj].POST + "  ";
+        }
+        $(".result").html(result_html);
+      });
+
+
+    });
+
+    </script>
   
 
 </body></html>

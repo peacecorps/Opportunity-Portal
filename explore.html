@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>peace corp</title>
+
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css' rel='stylesheet' />
+    <!--
+    <script src='js/mapbox.js'></script>
+    <link href='css/mapbox.css' rel='stylesheet' />
+    <script src='js/underscore-min.js'></script>
+-->
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/explore.css" rel="stylesheet">
+    <!-- Custom CSS for the 'One Page Wonder' Template -->
+</head>
+
+<body>
+
+
+    <div id='pane'><div id='map'></div></div>
+    <div class="main">
+        <div class="container main-container">
+                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                            <a class="navbar-brand" href="index.html">Peace Corps Opportunities Portal</a>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse navbar-ex1-collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="about.html">About</a></li>
+                                <li class="active"><a href="explore.html">Explore</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container -->
+                </nav>
+
+            <div class="row">
+                <div class="col-md-12 main-display">
+                    <!-- index -->
+                    <div class="section-index">
+                        <div class="col-md-12 sub-nav">
+                            <!--<img class="pc-logo" src="images/peacecorps_logo.png"/>-->
+                            <!-- stage 1 -->
+                            <div class="stage1">
+                                <h1>Where do you want to go?</h1>
+                                <div class="center-icon-grid">
+                                    <div class="icon-grid">
+                                        <a href="#" class="map_link"  place="China"> 
+                                            <div class="icon-grid-img">
+                                                <img src="http://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png" />
+                                            </div>
+                                            <button type="button" id="" class="btn place-btn">
+                                                Asia
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div class="icon-grid">
+                                        <a href="#" class="map_link" place="Algeria">  
+                                            <div class="icon-grid-img">
+                                                <img src="http://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png"/>
+                                            </div>
+                                            <button type="button" id="" class="btn place-btn">
+                                                North Africa
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div class="icon-grid">
+                                        <a href="#" class="map_link" place="South Africa">                                        
+                                            <div class="icon-grid-img">
+                                                <img src="http://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png"/>
+                                            </div>
+                                            <button type="button" id="" class="btn place-btn">
+                                                South Africa
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div class="icon-row">
+                                        <div class="icon-grid">
+                                            <a href="#" class="map_link" place="Brazil">
+                                            <div class="icon-grid-img">
+                                                <img src="http://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png" />
+                                            </div>
+                                            <button type="button" id="" class="btn place-btn">
+                                                South America 
+                                            </button>
+                                            </a>
+                                        </div>
+                                        <div class="icon-grid">
+                                            <a href="#" class="map_link" place="Germany">
+                                            <div class="icon-grid-img">
+                                                <img src="http://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png"/>
+                                            </div>
+                                            <button type="button" id="" class="btn place-btn">
+                                                Europe
+                                            </button>
+                                            </a>
+                                        </div>
+                                        <div class="icon-grid">
+                                            <a href= "#" class="map_default">
+                                            <div class="icon-grid-img">
+                                                <img src="http://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png"/>
+                                            </div>
+                                            <button type="button" id="" class="btn place-btn">
+                                                I don't care
+                                            </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="showStage2();" class="next btn btn-default btn-success">
+                                    >>
+                                </button>
+                            </div>
+                            <!-- stage 1 end -->
+
+                            <!-- stage 2 -->
+                            <div class="stage2" style="display:none;">
+                                <h1>Which country you do want to go?</h1>
+                                <div class="center-icon-grid">
+                                    <div class="icon-grid">
+                                        <a href="#" class="map_link" place="Ghana"> 
+                                            <div class="icon-grid-img">
+                                                <img src="http://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png" />
+                                            </div>
+                                            <button type="button" id="" class="btn place-btn">
+                                                Ghana
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div class="icon-grid">
+                                        <a href="#" class="map_link" place="Liberia">  
+                                            <div class="icon-grid-img">
+                                                <img src="http://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png"/>
+                                            </div>
+                                            <button type="button" id="" class="btn place-btn">
+                                                Liberia
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div class="icon-grid">
+                                        <a href="#" class="map_link" place="Ethiopia">                                        
+                                            <div class="icon-grid-img">
+                                                <img src="http://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png"/>
+                                            </div>
+                                            <button type="button" id="" class="btn place-btn">
+                                                Ethiopia
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div class="icon-row">
+                                        <div class="icon-grid">
+                                            <a href="#" class="map_link" place="Kenya">
+                                            <div class="icon-grid-img">
+                                                <img src="http://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png" />
+                                            </div>
+                                            <button type="button" id="" class="btn place-btn">
+                                                Kenya 
+                                            </button>
+                                            </a>
+                                        </div>
+                                        <div class="icon-grid">
+                                            <a href="#" class="map_link" place="Ugada">
+                                            <div class="icon-grid-img">
+                                                <img src="http://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png"/>
+                                            </div>
+                                            <button type="button" id="" class="btn place-btn">
+                                                Ugada
+                                            </button>
+                                            </a>
+                                        </div>
+                                        <div class="icon-grid">
+                                            <a href= "#" class="map_link" place="Somalia">
+                                            <div class="icon-grid-img">
+                                                <img src="http://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png"/>
+                                            </div>
+                                            <button type="button" id="" class="btn place-btn">
+                                                Somalia
+                                            </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="showStage3();" class="next btn btn-default btn-success">
+                                    >>
+                                </button>
+                            </div>
+                            <!-- stage 2 end -->
+
+                            <!-- stage 3 -->
+                            <div class="stage3" style="display:none;">
+                                <h1>Which field are you interested?</h1>
+                                <div class="center-icon-grid">
+                                    <div class="icon-grid">
+                                        <a href="#" class="map_default"> 
+                                            <div class="icon-grid-img">
+                                                <img src="http://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png" />
+                                            </div>
+                                            <button type="button" id="" class="btn place-btn">
+                                                Education
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div class="icon-grid">
+                                        <a href="#" class="map_default">  
+                                            <div class="icon-grid-img">
+                                                <img src="http://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png"/>
+                                            </div>
+                                            <button type="button" id="" class="btn place-btn">
+                                                Youth
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div class="icon-grid">
+                                        <a href="#" class="map_default">                                        
+                                            <div class="icon-grid-img">
+                                                <img src="http://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png"/>
+                                            </div>
+                                            <button type="button" id="" class="btn place-btn">
+                                                Health
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div class="icon-row">
+                                        <div class="icon-grid">
+                                            <a href="#" class="map_default">
+                                            <div class="icon-grid-img">
+                                                <img src="http://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png" />
+                                            </div>
+                                            <button type="button" id="" class="btn place-btn">
+                                                Community
+                                            </button>
+                                            </a>
+                                        </div>
+                                        <div class="icon-grid">
+                                            <a href="#" class="map_default">
+                                            <div class="icon-grid-img">
+                                                <img src="http://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png"/>
+                                            </div>
+                                            <button type="button" id="" class="btn place-btn">
+                                                Agriculture
+                                            </button>
+                                            </a>
+                                        </div>
+                                        <div class="icon-grid">
+                                            <a href= "#" class="map_default">
+                                            <div class="icon-grid-img">
+                                                <img src="http://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png"/>
+                                            </div>
+                                            <button type="button" id="" class="btn place-btn">
+                                                Environment
+                                            </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="golinkpage();" class="next btn btn-default btn-success">
+                                    Get started!
+                                </button>
+                            </div>
+                            <!-- stage 3 end -->
+                        </div>
+                    </div>
+                    <!-- index end -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+        var geocoder = L.mapbox.geocoder('ktu219.h9km2la1');
+        var map = L.mapbox.map('map', 'ktu219.h9km2la1');
+        $(".map_link").click(function(){
+            console.log($(this).attr("place"));
+            geocoder.query($(this).attr("place"), showMap);
+            updateButton(this);
+        });
+        $(".map_default").click(function(){
+            updateButton(this);
+            map.setZoom(4);
+        });
+        function showMap(err, data) {
+             map.fitBounds(data.lbounds);
+        }
+        function updateButton(obj) {
+            $(".place-btn").removeClass("btn-success");
+            $(obj).children(".place-btn").addClass("btn-success");
+        }
+        function showStage2() {
+            $(".stage1").hide();
+            $(".stage2").fadeIn(500);
+        };
+        function showStage3() {
+            $(".stage2").hide();
+            $(".stage3").fadeIn(500);
+        };
+        function golinkpage() {
+            location.href = "prototype_3.html";
+        };
+    </script>
+
+
+</body>
+
+</html>

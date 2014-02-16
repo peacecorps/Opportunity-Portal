@@ -80,7 +80,10 @@
                     {{job.location}}
                     <span ng-show="!job.location">Location unspecified</span>
                 </p>
-
+                <span class="icon-group">
+                    <span ng-show="job.rural"class="glyphicon glyphicon-tree-deciduous"></span>
+                    <span ng-show="job.hot" class="glyphicon glyphicon-fire"></span>
+                </span>
                 <div>
                 </div>
                 
@@ -89,9 +92,25 @@
         <div class="col-md-5">
 
             <h3>{{data.currJob.title}}<span ng-show="!data.currJob.title">No title</span></h3>
+            <!-- <h4>Location</h4> -->
+            <p class="under-header">
+                {{data.currJob.location}}
+                    <span ng-show="!data.currJob.location">Location unspecified</span> | {{data.currJob.num_vol}} spot(s) | App due: {{data.currJob.nominate_deadline}}
+            </p>
+            <h4>Project description</h4>
+            
             <p>
                 {{data.currJob['proj_desc']}}<span ng-show="!data.currJob.proj_desc">Project description is unavailable.</span>
             </p>
+            <br>
+            <h4>Skills</h4>
+            <p>
+                {{data.currJob['skills']}}<span ng-show="!data.currJob.skills">No special skill required.</span>
+            </p>
+            <br>
+            <h4>Living conditions</h4>
+            <p>{{data.currJob['live_cond']}}<span ng-show="!data.currJob.live_cond">TBD</span>
+            <p>{{data.currJob['live_cond_comm']}}<span ng-show="!data.currJob.live_cond_comm">TBD</span>    
         </div>
 
     </div>

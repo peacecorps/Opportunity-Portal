@@ -61,7 +61,24 @@ body {
 
 .job-title{
 	cursor: pointer;
-	
+
+}
+
+.job-item{
+	position: relative;
+    display: block;
+
+
+}
+
+.job-item > .icon-group{
+	position: absolute;
+	top:0px;
+	right:0px;
+}	
+
+.under-header{
+	color: #888;
 }
 
 

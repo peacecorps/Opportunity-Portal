@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>peace corp</title>
+
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css' rel='stylesheet' />
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/prototype_3.css" rel="stylesheet">
+    <!-- Custom CSS for the 'One Page Wonder' Template -->
+</head>
+
+<body ng-controller="Prototype3Ctrl">
+     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                            <a class="navbar-brand" href="index.html">Peace Corps Opportunities Portal</a>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse navbar-ex1-collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="about.html">About</a></li>
+                                <li class="active"><a href="explore.html">Explore</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container -->
+                </nav>
+
+    <div class="row">
+        <div class="col-md-3 ">
+            <div class="well left-pane">
+                <div class="select-item-group">
+                    <h4>Field</h4> 
+
+                    <span class="select-item" ng-click="toggleSector('Agriculture')">Agriculture</span>
+                    <span class="select-item" ng-click="toggleSector('Business')">Business</span>
+                    <span class="select-item" ng-click="toggleSector('Education')">Education</span>
+                    <span class="select-item" ng-click="toggleSector('Environment')">Environment</span>
+                    <span class="select-item" ng-click="toggleSector('Health')">Health</span>
+                    <span class="select-item" ng-click="toggleSector('Youth')">Youth</span>
+                </div>
+                <br>
+                <div class="select-item-group">
+                    <h4>Regions</h4>
+                    <span class="select-item" ng-click="toggleRegion('Asia')">Asia</span>
+                    <span class="select-item" ng-click="toggleRegion('North Africa')">North Africa</span>
+                    <span class="select-item" ng-click="toggleRegion('South Africa')">South Africa</span>
+                    <span class="select-item" ng-click="toggleRegion('South America')">South America</span>
+                    <span class="select-item" ng-click="toggleRegion('Europe')">Europe
+                </div>
+               
+
+                
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div ng-repeat="job in data.jobs" class="job-item">
+                <h4><a ng-click="selectJob(job.AA)" class="job-title">{{job.title}}<span ng-show="!job.title">No title</span></a></h4>
+                <p>
+                    {{job.location}}
+                    <span ng-show="!job.location">Location unspecified</span>
+                </p>
+                <span class="icon-group">
+                    <span ng-show="job.rural"class="glyphicon glyphicon-tree-deciduous"></span>
+                    <span ng-show="job.hot" class="glyphicon glyphicon-fire"></span>
+                </span>
+                <div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-md-5">
+
+            <h3>{{data.currJob.title}}<span ng-show="!data.currJob.title">No title</span></h3>
+            <!-- <h4>Location</h4> -->
+            <p class="under-header">
+                {{data.currJob.location}}
+                    <span ng-show="!data.currJob.location">Location unspecified</span> | {{data.currJob.num_vol}} spot(s) | App due: {{data.currJob.nominate_deadline}}
+            </p>
+            <h4>Project description</h4>
+            
+            <p>
+                {{data.currJob['proj_desc']}}<span ng-show="!data.currJob.proj_desc">Project description is unavailable.</span>
+            </p>
+            <br>
+            <h4>Skills</h4>
+            <p>
+                {{data.currJob['skills']}}<span ng-show="!data.currJob.skills">No special skill required.</span>
+            </p>
+            <br>
+            <h4>Living conditions</h4>
+            <p>{{data.currJob['live_cond']}}<span ng-show="!data.currJob.live_cond">TBD</span>
+            <p>{{data.currJob['live_cond_comm']}}<span ng-show="!data.currJob.live_cond_comm">TBD</span>    
+        </div>
+
+    </div>
+   
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+    <script src="js/prototype_3.js"></script>
+    <!--<script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>-->
+</body>
+
+</html>

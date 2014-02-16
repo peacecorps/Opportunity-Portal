@@ -3,6 +3,7 @@ function Prototype3Ctrl($scope, $http){
     $scope.state = {};
     $scope.state.sectors = [];
     $scope.state.regions = [];
+    $scope.state.countries = [];
 
     $http({
         url: "http://idhack.iis-dev.seas.harvard.edu/get_jobs" ,
@@ -23,6 +24,8 @@ function Prototype3Ctrl($scope, $http){
             $scope.data.jobs[i].cold = (Math.random() > 0.5);
 
         }
+
+        
     };
 
     $scope.toggleSector = function(sect){
@@ -35,6 +38,16 @@ function Prototype3Ctrl($scope, $http){
         $scope.getJobs();
     };
 
+    $scope.toggleCountry = function(sect){
+        var sIdx = $scope.state.countries.indexOf(sect)
+        if( sIdx == -1){
+            $scope.state.countries.push(sect);
+        }else{
+            $scope.state.countries.splice(sIdx,1);
+        }
+        $scope.getJobs();
+    };
+
     $scope.toggleRegion = function(reg){
         var sIdx = $scope.state.regions.indexOf(reg);
         if( sIdx == -1){
@@ -42,7 +55,7 @@ function Prototype3Ctrl($scope, $http){
         }else{
             $scope.state.regions.splice(sIdx,1);
         }
-        $scope.getJobs();
+        // $scope.getJobs();
     };
 
     $scope.getJobs = function(){
@@ -50,7 +63,8 @@ function Prototype3Ctrl($scope, $http){
         $http({
             url: "http://idhack.iis-dev.seas.harvard.edu/get_jobs" ,
             method: "GET",
-            params: {sector: $scope.state.sectors.join("+")}
+            params: {sector: $scope.state.sectors.join("+"),
+                     location: $scope.state.countries.join("+")}
         }).success(function(data){
             $scope.data.jobs = null;
             $scope.data.jobs = data.data;

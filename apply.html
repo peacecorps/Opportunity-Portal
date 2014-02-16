@@ -1,107 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
-<!-- saved from url=(0050)http://getbootstrap.com/examples/starter-template/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="http://getbootstrap.com/assets/ico/favicon.ico">
-
-    <title>Opportunities Search</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  <style type="text/css">
-  .result {
-    background-color: black;
-    color: white;
-  }
-</style>
-
-</head>
-
-  <body style="">
-
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="http://getbootstrap.com/examples/starter-template/#">Project name</a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="http://getbootstrap.com/examples/starter-template/#">Home</a></li>
-            <li><a href="http://getbootstrap.com/examples/starter-template/#about">About</a></li>
-            <li><a href="http://getbootstrap.com/examples/starter-template/#contact">Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-
-    <div class="container">
-
-      <div class="starter-template">
-        <h1>PeaceCorps Opportunity Search</h1>
-        <p class="lead">Use this form to find PeaceCorp opportunities related to your interests.</p>
-      </div>
-
-      <h3> Choose your country: </h3>
-
-      <!--
-    <div class="btn-group">
-      <button type="button" class="btn btn-default">Uganda</button>
-      <button type="button" class="btn btn-default">Ghana</button>
-    </div>
-  -->
-      <div class="pref">
-        <input class="prefplace" type="checkbox" value="Uganda">Uganda
-        <input class="prefplace" type="checkbox" value="Ghana">Ghana
-      </div>
-      <br>
-      <br>
-
-      <h3> Choose your sector: </h3>
-
-      <div class="pref">
-        <input class="prefsector" type="checkbox" value="Health">Health
-        <input class="prefsector" type="checkbox" value="Education">Education
-      </div>
-      <br>
-      <br>
-
-      <div class="btn-group">
-        <button id="sendpref" type="button" class="btn btn-default">Submit</button>
-      </div>
-
-
-
-
-    <div class="result">
-    </div>
-
-
-    </div><!-- /.container -->
-
-=======
 <html lang="en">
 
 <head>
@@ -145,7 +42,8 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="about.html">About</a></li>
-                    <li><a href="apply.html">Explore</a></li>
+                    <li><a href="explore.html">Explore</a></li>
+                    <li><a href="apply.html">Apply</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -163,7 +61,7 @@
 
       <div class="starter-template">
         <h1>PeaceCorps Opportunity Search</h1>
-        <p>Use this form to find PeaceCorp opportunities related to your interests.</p>
+        <p>Use this form to find PeaceCorp opportunities related to your interests.If you have a clear idea of the projects you want to work on, you can start picking categories you are interested in. You can also explore all the opportunities by not choosing anything and clicking on submit.</p>
       </div>
 
 
@@ -266,21 +164,14 @@
   </div>
 
 </div>
->>>>>>> master
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-<<<<<<< HEAD
-    <script src="./form_files/jquery.min.js"></script>
-    <script src="./form_files/bootstrap.min.js"></script>
-    <script>
-=======
     <script src="./js/jquery-1.10.2.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script>
     var result_data = {};
->>>>>>> master
     var country = "";
     var sector = "";
     $("#sendpref").click(function(){
@@ -304,30 +195,12 @@
       })
           console.log(sector);
     });
-<<<<<<< HEAD
-      console.log(country);
-      
-
-
-=======
     console.log(country);
->>>>>>> master
 
 
 
       $.getJSON("http://idhack.iis-dev.seas.harvard.edu/get_jobs?callback=?",{"location":country,"sector":sector},function(result){
         console.log(result);
-<<<<<<< HEAD
-        var result_html = "";
-        for (obj in result.data){
-          result_html += result.data[obj].POST + "  ";
-        }
-        $(".result").html(result_html);
-      });
-
-
-    });
-=======
         //var result_html = "<div class='result-table-row'><div class='result-table-header'>#</div><div class='result-table-header'>Title</div></div>";
         var result_html = "";
         for (obj in result.data){
@@ -357,10 +230,6 @@
     //detailHtml += "<h3>"+ result.proj_desc +"</h3>";
     $(".modal-body").html(detailHtml);
   }
-
-
-
->>>>>>> master
 
     </script>
   

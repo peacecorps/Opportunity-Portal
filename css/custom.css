@@ -42,7 +42,7 @@ right: 20%;
 left: 20%;
 padding-bottom: 100px;
 }
-}
+} 
 
 /* FEATURETTE */
 
@@ -104,4 +104,16 @@ color: #26A2AF;
 	-webkit-box-shadow: inset 0 1px 0 #ffffff;
 	-moz-box-shadow: inset 0 1px 0 #ffffff;
 	box-shadow: inset 0 1px 0 #ffffff;
+}
+
+.pref {
+	overflow:auto;
+}
+
+label {
+	font-weight:normal;
+}
+
+.btn-group{
+	float:right;
 }

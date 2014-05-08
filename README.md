@@ -66,62 +66,73 @@ LAUNCH
 <h3>The following is a list of fields that will be displayed in some fashion to potential applicants:</h3>
 
 Volunteers Requested
-  Label to Use: "Volunteers Requested"
-  Sort/Filter: No
-  Notes: Indicates # of positions available. (Number that is unlikely to fluctuate once posted)
+  <ul>
+  <li>Label to Use: "Volunteers Requested"</li>
+  <li>Sort/Filter: No</li>
+  <li>Notes: Indicates # of positions available. (Number that is unlikely to fluctuate once posted)</li>
 
 Sub-Region
-  Label to Use: "Region"
-  Sort/Filter: Yes
-  Notes: none
-  
+<ul>
+  <li>Label to Use: "Region"</li>
+  <li>Sort/Filter: Yes</li>
+  <li>Notes: none</li>
+  </ul>
 Post
-  Label to Use: "Country"
-  Sort/Filter: Yes
-  Notes: none
-  
+<ul>
+  <li>Label to Use: "Country"</li>
+  <li>Sort/Filter: Yes</li>
+  <li>Notes: none</li>
+  </ul>
 Staging Start Date
-  Label to Use: "Departure Date"
-  Sort/Filter: Yes
-  Notes: none
-  
+<ul>
+  <li>Label to Use: "Departure Date"</li>
+  <li>Sort/Filter: Yes</li>
+  <li>Notes: none</li>
+  </ul>
 Project Title
-  Label to Use: "Project Title"
-  Sort/Filter: No
-  Notes: Note:  We will strip out the Code (first 7 characters in field) and make this into a new listing
-  
+<ul>
+  <li>Label to Use: "Project Title"</li>
+  <li>Sort/Filter: No</li>
+  <li>Notes: Note:  We will strip out the Code (first 7 characters in field) and make this into a new listing</li>
+  </ul>
 Sector
-  Label to Use: "Sector"
-  Sort/Filter: Yes
-  Notes: none
-  
+<ul>
+  <li>Label to Use: "Sector"</li>
+  <li>Sort/Filter: Yes</li>
+  <li>Notes: none</li>
+  </ul>
 Desired Skills
-  Label to Use: "Desired Skills"
-  Sort/Filter: No
-  Notes: none
-  
+<ul>
+  <li>Label to Use: "Desired Skills"</li>
+  <li>Sort/Filter: No</li>
+  <li>Notes: none</li>
+  </ul>
 Project Desciption
-  Label to use: "Project Description"
-  Sort/Filter: No
-  Notes: none
-
+<ul>
+  <li>Label to use: "Project Description"</li>
+  <li>Sort/Filter: No</li>
+  <li>Notes: none</li>
+</ul>
 <h3>The following fields will not be displayed on the initial launch, but will be incorporated in a future release.</h3>
   
 Living Conditions
-  Label to Use: "Living Conditions"
-  Sort/Filter: No
-  Notes: Text Field
-  
+<ul>
+  <li>Label to Use: "Living Conditions"</li>
+  <li>Sort/Filter: No</li>
+  <li>Notes: Text Field</li>
+  </ul>
 Language Requirements
-  Label to Use: "Language"
-  Sort/Filter: Yes
-  Notes: Text Field
-  
+<ul>
+  <li>Label to Use: "Language"</li>
+  <li>Sort/Filter: Yes</li>
+  <li>Notes: Text Field</li>
+  </ul>
 Accepts Couples
-  Label to Use: "Accepts Couples"
-  Sort/Filter: No
-  Notes: Number field, but may also include text
-
+<ul>
+  <li>Label to Use: "Accepts Couples"</li>
+  <li>Sort/Filter: No</li>
+  <li>Notes: Number field, but may also include text</li>
+</ul>
 <h2>Resources and Reference Files:</h2>
 <ul>
 <li>Link Prezi: http://prezi.com/4tmjrjejipqh/?utm_campaign=share&utm_medium=copy</li>

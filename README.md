@@ -70,7 +70,7 @@ Volunteers Requested
   <li>Label to Use: "Volunteers Requested"</li>
   <li>Sort/Filter: No</li>
   <li>Notes: Indicates # of positions available. (Number that is unlikely to fluctuate once posted)</li>
-
+</ul>
 Sub-Region
 <ul>
   <li>Label to Use: "Region"</li>

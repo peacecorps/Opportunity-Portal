@@ -65,6 +65,8 @@ LAUNCH
 
 <h3>The following is a list of fields that will be displayed in some fashion to potential applicants:</h3>
 
+These fields can be viewed in an extracted file, <a href="https://github.com/PeaceCorps/Opportunity-Portal/blob/master/Resources/JSR%20Full%20Extract%202014%200501.xlsx">JSR Full Extract 2014 0501</a>. JSR stands for "Job Specific Requirements" and can be thought of as a job description file. This table of data is what we will automatically pull. The fields below are the ones we want to display in the Opportunity portal from that source.
+
 Volunteers Requested
   <ul>
   <li>Label to Use: "Volunteers Requested"</li>

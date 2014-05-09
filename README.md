@@ -143,17 +143,5 @@ Accepts Couples
 <li>Another Prototype: http://peacecorps.meteor.com/</li>
 <li>MIT hackathon submissions with screenshots: http://idhack.challengepost.com/submissions</li>
 </ul>
-<h2>Considerations based on Hack-a-thon prototypes: (Remove from ReadMe and Ticket)</h2>
-<ul>
-<li>Quick view:  positions open/application/notification date/departure date</li>
-<li>Ability to bookmark this job/saving/social icons</li>
-<li>Pop-up/window detail page (can you still bookmark?)</li>
-<li>Use of sector icons</li>
-<li>(HeroKuapp.com) Not sure truncated project description works as well as short description (or appeal) to lead into longer description</li>
-<li>(Meteor.com) Pick-a-date slide ruler functionality interesting—need to use correctly</li>
-<li>(MIT) Guided Search and use of filtering system (box check without having to create new search each time)</li>
-<li>(Ops) Like brief description of sector</li>
-<li>(Corp Connect) – Like filtering capabilities</li>
-</ul>
 
 

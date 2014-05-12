@@ -115,8 +115,7 @@ Project Desciption
   <li>Sort/Filter: No</li>
   <li>Notes: none</li>
 </ul>
-<h3>The following fields will not be displayed on the initial launch, but will be incorporated in a future release.</h3>
-  
+
 Living Conditions
 <ul>
   <li>Label to Use: "Living Conditions"</li>
@@ -129,11 +128,17 @@ Language Requirements
   <li>Sort/Filter: Yes</li>
   <li>Notes: Text Field</li>
   </ul>
-Accepts Couples
+Accepts Couples- This will likely be rolled into the living conditions.... 
 <ul>
   <li>Label to Use: "Accepts Couples"</li>
   <li>Sort/Filter: No</li>
   <li>Notes: Number field, but may also include text</li>
+</ul>
+Medical Considerations
+<ul>
+  <li>Label to Use: Medical Considerations</li>
+  <li>Sort/Filter: No</li>
+  <li>Notes: Text Field, that is pulled from a separate static data base./li>
 </ul>
 <h2>Resources and Reference Files:</h2>
 <ul>

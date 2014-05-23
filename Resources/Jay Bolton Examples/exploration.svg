@@ -107,8 +107,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.70710678"
-     inkscape:cx="74.640401"
-     inkscape:cy="757.42159"
+     inkscape:cx="211.81912"
+     inkscape:cy="935.6125"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -128,7 +128,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1511,17 +1511,6 @@
        id="rect9077"
        style="color:#000000;fill:#cdd7e7;fill-opacity:0.80392157;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        ry="5" />
-    <text
-       xml:space="preserve"
-       style="font-size:16.05932045px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
-       x="-130.30977"
-       y="1785.0751"
-       id="text9163"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan9165"
-         x="-130.30977"
-         y="1785.0751">Infinity scroll  thos fmetherfuckers</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:19.53582001px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Open Sans;-inkscape-font-specification:Open Sans"

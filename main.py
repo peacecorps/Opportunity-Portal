@@ -21,9 +21,10 @@ class opportunityHandler(BaseHandler):
     def get(self, opportunityCode):
     	if opportunityCode == None:
     		opportunityCode = "Insert code here"
-    	args = dict(
-    		opportunityCode = opportunityCode
-    		)
+        
+        args = dict(
+            opportunityCode = opportunityCode
+        )
         self.render_template("view/opportunity.html", args)
 
 app = webapp2.WSGIApplication([

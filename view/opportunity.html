@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>peace corp</title>
+
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css' rel='stylesheet' />
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/prototype_3.css" rel="stylesheet">
+    <!-- Custom CSS for the 'One Page Wonder' Template -->
+
+        <script type="text/javascript">var switchTo5x=true;</script> 
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "0632f4ec-e15d-41e8-b4e1-eaee53a4038b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css' rel='stylesheet' />
+    <style type="text/css">
+    </style>
+
+</head>
+
+<body ng-controller="Prototype3Ctrl">
+     <div id='pane'><div id='map'></div></div>
+     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                            <a class="navbar-brand" href="index.html">Peace Corps Opportunities Portal</a>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse navbar-ex1-collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="about.html">About</a></li>
+                                <li class="active"><a href="explore.html">Explore</a></li>
+                                <li><a href="apply.html">Apply</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container -->
+                </nav>
+
+    <div class="row major-display">
+        <div class="col-md-3 ">
+            <div class="well left-pane">
+                <div class="select-item-group">
+                    <h4>Field</h4> 
+                    <span ng-switch="state.sectors.indexOf('Agriculture')">
+                    <span ng-switch-when="-1" class="select-item" id="Agriculture" ng-click="toggleSector('Agriculture')">Agriculture</span>
+                    <span ng-switch-default class="select-active" ng-click="toggleSector('Agriculture')">Agriculture</span></span>
+                    
+
+                    <span ng-switch="state.sectors.indexOf('Business')">
+                    <span ng-switch-when="-1" class="select-item" id="Business" ng-click="toggleSector('Business')">Business</span>
+                    <span ng-switch-default class="select-active" ng-click="toggleSector('Business')">Business</span></span>
+
+                    <span ng-switch="state.sectors.indexOf('Education')">
+                    <span ng-switch-when="-1" class="select-item" ng-click="toggleSector('Education')">Education</span>
+                    <span ng-switch-default class="select-active" ng-click="toggleSector('Education')">Education</span></span>
+
+                    <span ng-switch="state.sectors.indexOf('Environment')">
+                    <span ng-switch-when="-1" class="select-item" ng-click="toggleSector('Environment')">Environment</span>
+                    <span ng-switch-default class="select-active" ng-click="toggleSector('Environment')">Environment</span></span>
+
+                    <span ng-switch="state.sectors.indexOf('Health')">
+                    <span ng-switch-when="-1" class="select-item" ng-click="toggleSector('Health')">Health</span>
+                    <span ng-switch-default class="select-active" ng-click="toggleSector('Health')">Health</span></span>
+
+                    <span ng-switch="state.sectors.indexOf('Youth')">
+                    <span ng-switch-when="-1" class="select-item" ng-click="toggleSector('Youth')">Youth</span>
+                    <span ng-switch-default class="select-active" ng-click="toggleSector('Youth')">Youth</span></span>
+
+
+
+
+
+                    
+                </div>
+                <br>
+                <div class="select-item-group">
+                    <h4>Regions</h4>
+                    <span ng-switch="state.regions.indexOf('Asia')">
+                    <span ng-switch-when="-1" class="select-item" ng-click="toggleRegion('Asia')">Asia</span>
+                    <span ng-switch-default class="select-active" ng-click="toggleRegion('Asia')">Asia</span></span>
+
+                    <span ng-switch="state.regions.indexOf('North Africa')">
+                    <span ng-switch-when="-1" class="select-item" ng-click="toggleRegion('North Africa')">North Africa</span>
+                    <span ng-switch-default class="select-active" ng-click="toggleRegion('North Africa')">North Africa</span></span>
+
+                    <span ng-switch="state.regions.indexOf('South Africa')">
+                    <span ng-switch-when="-1" class="select-item" ng-click="toggleRegion('South Africa')">South Africa</span>
+                    <span ng-switch-default class="select-active" ng-click="toggleRegion('South Africa')">South Africa</span></span>
+
+                    <span ng-switch="state.regions.indexOf('South America')">
+                    <span ng-switch-when="-1" class="select-item" ng-click="toggleRegion('South America')">South America</span>
+                    <span ng-switch-default class="select-active" ng-click="toggleRegion('South America')">South America</span></span>
+
+                    <span ng-switch="state.regions.indexOf('Europe')">
+                    <span ng-switch-when="-1" class="select-item" ng-click="toggleRegion('Europe')">Europe</span>
+                    <span ng-switch-default class="select-active" ng-click="toggleRegion('Europe')">Europe</span></span>
+
+                </div>
+                 <div class="select-item-group">
+                    <h4>Countries</h4>
+
+                    <span ng-switch="state.countries.indexOf('Ghana')">
+                    <span ng-switch-when="-1" class="select-item" ng-click="toggleCountry('Ghana')">Ghana</span>
+                    <span ng-switch-default class="select-active" ng-click="toggleCountry('Ghana')">Ghana</span></span>
+
+                    <span ng-switch="state.countries.indexOf('Liberia')">
+                    <span ng-switch-when="-1" class="select-item" ng-click="toggleCountry('Liberia')">Liberia</span>
+                    <span ng-switch-default class="select-active" ng-click="toggleCountry('Liberia')">Liberia</span></span>
+
+                    <span ng-switch="state.countries.indexOf('Ethiopia')">
+                    <span ng-switch-when="-1" class="select-item" ng-click="toggleCountry('Ethiopia')">Ethiopia</span>
+                    <span ng-switch-default class="select-active" ng-click="toggleCountry('Ethiopia')">Ethiopia</span></span>
+
+                    <span ng-switch="state.countries.indexOf('Kenya')">
+                    <span ng-switch-when="-1" class="select-item" ng-click="toggleCountry('Kenya')">Kenya</span>
+                    <span ng-switch-default class="select-active" ng-click="toggleCountry('Kenya')">Kenya</span></span>
+
+                    <span ng-switch="state.countries.indexOf('Uganda')">
+                    <span ng-switch-when="-1" class="select-item" ng-click="toggleCountry('Uganda')">Uganda</span>
+                    <span ng-switch-default class="select-active" ng-click="toggleCountry('Uganda')">Uganda</span></span>
+
+                </div>
+               
+
+                
+            </div>
+
+        </div>
+            <div class="col-md-4">
+                <div ng-repeat="job in data.jobs" class="job-item">
+                    <h4><a ng-click="selectJob(job.AA)" class="job-title">{{job.title}}<span ng-show="!job.title">{{job.title}}</span></a></h4>
+                    <p>
+                        {{job.location}}
+                        <span ng-show="!job.location">Location unspecified</span>
+                    </p>
+                    <span class="icon-group">
+                        <span ng-show="job.rural"class="glyphicon glyphicon-tree-deciduous"></span>
+                        <span ng-show="job.hot" class="glyphicon glyphicon-fire"></span>
+                    </span>
+                    <div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-5">
+
+                <h3>{{data.currJob.title}}<span ng-show="!data.currJob.title">{{opportunityCode}}</span></h3>
+                <!-- <h4>Location</h4> -->
+                <p class="under-header">
+                    {{data.currJob.location}}
+                        <span ng-show="!data.currJob.location">Location unspecified</span> | {{data.currJob.num_vol}} spot(s) | App due: {{data.currJob.nominate_deadline}}
+                </p>
+                <br>
+                <h4>Project description</h4>
+                
+                <p>
+                    {{data.currJob.proj_desc}}<span ng-show="!data.currJob.proj_desc">Project description is unavailable.</span>
+                </p>
+                <br>
+                <h4>Skills</h4>
+                <p>
+                    {{data.currJob.skills}}<span ng-show="!data.currJob.skills">No special skill required.</span>
+                </p>
+                <br>
+                <h4>Living conditions</h4>
+                <p>{{data.currJob.live_cond}}<span ng-show="!data.currJob.live_cond">TBD</span>
+
+
+                <p>{{data.currJob.live_cond_comm}}<span ng-show="!data.currJob.live_cond_comm">TBD</span>
+                <br>
+                <br>
+                    <a href="http://www.peacecorps.gov/apply/" class="btn btn-primary btn-lg active" role="button">Apply</a>  
+
+                    <span class='st_facebook_large' displayText='Facebook'></span>
+                    <span class='st_twitter_large' displayText='Tweet'></span>
+                    <span class='st_email_large' displayText='Email'></span>
+                </div>
+
+
+    </div>
+   
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+    <script src="js/prototype_3.js"></script>
+    <script type="text/javascript">
+        var geocoder = L.mapbox.geocoder('ktu219.h9km2la1');
+        var map = L.mapbox.map('map', 'ktu219.h9km2la1', {zoomControl: false});
+    </script>
+    <!--<script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>-->
+</body>
+
+</html>

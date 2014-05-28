@@ -15,14 +15,18 @@ class BaseHandler(webapp2.RequestHandler):
 # index.html
 class indexHandler(BaseHandler):
     def get(self):
-        self.render_template("index.html", dict())
+        self.render_template("view/index.html", dict())
 
-# For general static files
-class staticFileHandler(BaseHandler):
-    def get(self, filename):
-        self.render_template(filename, dict())
+class opportunityHandler(BaseHandler):
+    def get(self, opportunityCode):
+    	if opportunityCode == None:
+    		opportunityCode = "Insert code here"
+    	args = dict(
+    		opportunityCode = opportunityCode
+    		)
+        self.render_template("view/opportunity.html", args)
 
 app = webapp2.WSGIApplication([
     ('/', indexHandler),
-    ('/([^/]+)?', staticFileHandler)
+    ('/opportunity/([^/]+)?', opportunityHandler),
 ], debug=True)

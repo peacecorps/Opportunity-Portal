@@ -26,14 +26,15 @@ body {
 }
 
 .center-icon-grid {
-	width: 600px;
+	width: 800px;
+	height: 10px;
 	margin-right: auto;
 	margin-left: auto;
 }
 .icon-grid {
 	display: inline-block;
 	width:180px;
-	padding:20px;
+	padding: 1px;
 }
 .icon-grid-img img {
 	height:120px;

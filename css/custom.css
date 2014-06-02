@@ -62,8 +62,14 @@ nav ul, nav ol {
   list-style-image: none; 
 }
 
+/* GENERAL */
 
 .container {background-color: #fff;}
+
+.left {float:left;}
+
+.right{float: right;}
+
 
 /* NAV BAR */
 
@@ -72,20 +78,95 @@ nav ul, nav ol {
 	border-color: #fff;
 }
 
-.navbar-nav.navbar-right {
-margin-top: 40px;
-}
+.navbar-nav.navbar-right {margin-top: 40px;}
 
-/* EXPLORATION PAGE - SEARCH */
+/* EXPLORATION PAGE */
+
+.search-results-map{margin-bottom:30px;}
 
 .search {
-background-color: #cac6aa;
+	padding-left: 20px;
+}
+
+.search label{font-weight: normal;}
+
+.search td:first-child{float: right;}
+
+.search td:nth-child(2){padding-left: 10px;}
+
+.search-results-paginagtion p{
+	font-size:20px;
+	font-weight:bold;
+	margin: 0 0 25px 45px;
+}
+
+.search-pagination ul{float:right;}
+
+.job-entry {margin-bottom:40px;}
+
+.job-entry h3 {margin-top:0;}
+
+.job-descrip td:first-child{font-weight: bold;}
+
+/* OPPORTUNITY PAGE */
+
+.job-details ul{
+	background-color: #d1cdb2;
+	list-style:none;
+    padding:5px 0;
+
+}
+
+.job-details li {
+	display: inline;
+	padding:0 20px;
+	color:#fff;
+	font-weight:bold;
+	margin: 20px 0;
+}
+
+.search, .applicable-sidebar{
+	background-color: #e1dec7;
+	background-image: url(../images/bg-tan-edge-top.gif), url(../images/bg-tan-edge-bottom.gif);
+    background-position: 0 0, 0 bottom;
+    background-repeat: repeat-x, repeat-x;
+    margin-bottom: 20px;
+    padding: 10px 0;
+}
+
+.btn.applicable-button {
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	font-size: 16px;
+	padding: 5px;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+.save {background-color: #40a7ca;}
+.inquire {background-color: #2380a0;}
+.apply {background-color: #005f7e;}
+
+
+/* FOOTER */
+
+.top-footer{
+	background: #fff url(../images/bg-footer-panel-home-lg.png) 0 0 repeat-x;
+	height: 120px;
+	margin-top: 20px;
 }
 
 
+.footer {
+	background-color: #685744;
+	color: #d1cdb2;
+	padding:20px 0;
+}
 
+.footer a{color: #fff;}
 
-
+.footer a:hover{text-decoration: underline;}
 
 
 

@@ -13,6 +13,10 @@ body {
 	border-radius: 20px;
 	background-color: rgba(0,0,0,0.5);
 	color: white;
+	overflow: auto;
+}
+.main-display h1 {
+	margin-bottom: 30px;
 }
 .sub-nav, .main-nav {
 	min-height: 600px;
@@ -24,9 +28,8 @@ body {
 	background-color: rgba(255,255,255,0.5);
 	height:30px
 }
-
 .center-icon-grid {
-	width: 800px;
+	width: 1000px;
 	height: 10px;
 	margin-right: auto;
 	margin-left: auto;
@@ -35,6 +38,8 @@ body {
 	display: inline-block;
 	width:180px;
 	padding: 1px;
+	margin-bottom:30px;
+
 }
 .icon-grid-img img {
 	height:120px;
@@ -59,3 +64,32 @@ body {
 	background-color: #b04d0a;
 }
 
+/* MEDIA QUERIES */
+
+@media (min-width: 992px){
+
+
+
+} /*end of media query*/
+
+
+
+@media (max-width: 992px){
+
+
+} /*end of media query*/
+
+
+
+@media (max-width: 768px){
+
+.column-row {}
+} /*end of media query*/
+
+
+
+@media (max-width: 480px){
+
+.icon-grid-img img {display: none;}
+.icon-grid { margin-bottom: 0px;}
+} /*end of media query*/

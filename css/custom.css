@@ -172,6 +172,34 @@ nav ul, nav ol {
 
 
 
+/* MEDIA QUERIES */
+
+@media (min-width: 992px){
+
+
+
+} /*end of media query*/
+
+
+
+@media (max-width: 992px){
+
+
+} /*end of media query*/
+
+
+
+@media (max-width: 768px){
+
+
+} /*end of media query*/
+
+
+
+@media (max-width: 480px){
+	
+
+} /*end of media query*/
 
 
 

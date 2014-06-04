@@ -49,8 +49,13 @@ body {
 
 }
 .next{
+	background-color: #cd621a;
+	border:none;
 	position: absolute;
 	top:50%;
 	right:0;
+}
+.next:hover {
+	background-color: #b04d0a;
 }
 

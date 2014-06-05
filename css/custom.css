@@ -113,6 +113,10 @@ nav ul, nav ol {
 	font-weight:bold;
 	margin: 0 0 25px 45px;
 }
+.search select[multiple], select[size] {
+height: 140px;
+width: 200px;
+}
 
 .search-pagination ul{float:right;}
 

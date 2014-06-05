@@ -3,6 +3,9 @@ body {
 	margin: 0;
 	padding: 0;
 }
+h1 {
+		font-family: 'Archer SSm A', 'Archer SSm B'; font-weight: 700; font-style: normal;
+	}
 #map { position:absolute; top:0; bottom:0; width:100%; }
 
 nav>.container {

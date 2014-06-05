@@ -30,27 +30,14 @@
 <script type="text/javascript">stLight.options({publisher: "0632f4ec-e15d-41e8-b4e1-eaee53a4038b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 
 <!-- Date Picker Jquery -->
-<script>
+ <script>
   $(function() {
-    $( "#from" ).datepicker({
-      defaultDate: "+1w",
+    $( "#datepicker,#datepicker2").datepicker({
       changeMonth: true,
-      numberOfMonths: 1,
-      onClose: function( selectedDate ) {
-        $( "#to" ).datepicker( "option", "minDate", selectedDate );
-      }
-    });
-    $( "#to" ).datepicker({
-      defaultDate: "+1w",
-      changeMonth: true,
-      numberOfMonths: 1,
-      onClose: function( selectedDate ) {
-        $( "#from" ).datepicker( "option", "maxDate", selectedDate );
-      }
+      changeYear: true
     });
   });
   </script>
-
     
 </head>
 
@@ -74,9 +61,9 @@
 
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="./">About</a></li>
+            <li><a href="./">About</a></li>
             <li><a href="../navbar-static-top/">Explore</a></li>
-            <li><a href="../navbar-fixed-top/">Apply</a></li>
+            <li class="active"><a href="../navbar-fixed-top/">Apply</a></li>
             <li><a href="../navbar-fixed-top/">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -99,7 +86,7 @@
 
 <!-- ADVANCE SEARCH - LEFT SIDEBAR -->
         <div class="col-md-3 search">
-            <h2>Work Areas</h2>
+            <h2>Sectors</h2>
               <input type="checkbox" name="Education"> Education<br/>
               <input type="checkbox" name="Development"> Youth &amp; Community Development<br/>
               <input type="checkbox" name="Health"> Health &amp; HIV/AIDS<br/>
@@ -107,27 +94,106 @@
               <input type="checkbox" name="Agriculture"> Agriculture<br/>
               <input type="checkbox" name="Environment"> Environment
 
-            <h2>Availability</h2>
-            <p>Find an opportunity starting</p>
 
-            <table>
-              <tr>
-                <td><label for="from">From</label></td>
-                <td><input type="text" id="from" name="from"></td>
-              </tr>
-              <tr>
-                <td><label for="to">to</label></td>
-                <td><input type="text" id="to" name="to"></td>
-              </tr>
-            </table>
+
+              <h2>Regions</h2>
+              <select name="regions" multiple>
+  <option value="Africa">Africa</option>
+  <option value="Asia">Asia</option>
+  <option value="Caribbean">Caribbean</option>
+  <option value="CentralAmerica">Central America</option>
+  <option value="CentralAsia">Central Asia</option>
+  <option value="EasternEurope">Eastern Europe</option>
+  <option value="NorthAfricaMiddleEast">North Africa &amp; Middle East</option>
+  <option value="PacificIslands">Pacific Islands</option>
+  <option value="SouthAmerica">South America</option>
+  <option value="Global">Global</option>
+</select>
+
+            <h2>Countries</h2>
+              <select name="countries" multiple>
+  <option value="Albania">Albania</option>
+  <option value="Armenia">Armenia</option>
+  <option value="Azerbaijan">Azerbaijan</option>
+  <option value="Belize">Belize</option>
+  <option value="Benin">Benin</option>
+  <option value="Botswana">Botswana</option>
+  <option value="Burkina Faso">Burkina Faso</option>
+  <option value="Cambodia">Cambodia</option>
+  <option value="Cameroon">Cameroon</option>
+  <option value="China">China</option>
+
+  <option value="Colombia">Colombia</option>
+  <option value="Costa Rica">Costa Rica</option>
+  <option value="Dominican Rep.">Dominican Rep.</option>
+  <option value="Eastern Caribbean">Eastern Caribbean  </option>
+  <option value="Ecuador">Ecuador</option>
+  <option value="El Salvador">El Salvador</option>
+  <option value="Ethiopia">Ethiopia</option>
+  <option value="Fiji">Fiji</option>
+  <option value="Georgia">Georgia</option>
+  <option value="Ghana">Ghana</option>
+
+  <option value="Guatemala">Guatemala</option>
+  <option value="Guinea">Guinea</option>
+  <option value="Guyana">Guyana</option>
+  <option value="Indonesia">Indonesia</option>
+  <option value="Jamaica">Jamaica</option>
+  <option value="Jordan">Jordan</option>
+  <option value="Kenya">Kenya</option>
+  <option value="Kosovo">Kosovo</option>
+  <option value="Kyrgyzstan">Kyrgyzstan/option>
+  <option value="Lesotho">Lesotho</option>
+
+  <option value="Liberia">Liberia</option>
+  <option value="Macedonia">Macedonia</option>
+  <option value="Madagascar">Madagascar</option>
+  <option value="Malawi">Malawi</option>
+  <option value="Mexico">Mexico</option>
+  <option value="Micronesia">Micronesia</option>
+  <option value="Moldova">Moldova</option>
+  <option value="Mongolia">Mongolia</option>
+  <option value="Morocco">Morocco</option>
+  <option value="Mozambique">Mozambique</option>
+
+  <option value="Namibia">Namibia</option>
+  <option value="Nepal">Nepal</option>
+  <option value="Nicaragua">Nicaragua</option>
+  <option value="Panama">Panama</option>
+  <option value="Paraguay">Paraguay</option>
+  <option value="Peru">Peru</option>
+  <option value="Philippines">Philippines</option>
+  <option value="Rwanda">Rwanda</option>
+  <option value="Samoa">Samoa</option>
+  <option value="Senegal">Senegal</option>
+
+  <option value="Sierra Leone">Sierra Leone</option>
+  <option value="South Africa">South Africa</option>
+  <option value="Swaziland">Swaziland</option>
+  <option value="Tanzania">Tanzania</option>
+  <option value="Thailand">Thailand</option>
+  <option value="The Gambia">The Gambia</option>
+  <option value="Togo">Togo</option>
+  <option value="Tonga">Tonga</option>
+  <option value="Uganda">Uganda</option>
+  <option value="Vanuatu">Vanuatu</option>
+  <option value="Zambia">Zambia</option>
+</select>
+
+            <h2>Apply Date</h2>
+            <input type="text" id="datepicker">
+
+<h2>Departure Date</h2>
+            <input type="text" id="datepicker2">
+             
             
-            <h2>Skills Needs</h2>
+        <!--     <h2>Skills Needs</h2>
             <input type="checkbox" name="Nursing"> Nursing<br />
             <input type="checkbox" name="Teaching"> English Teaching<br />
             <input type="checkbox" name="Forestry"> Forestry<br />
             <input type="checkbox" name="Management"> Nursing Management<br />
             <input type="checkbox" name="Software"> Office Software<br />
-            <input type="checkbox" name="Dancing"> Hip Hop Dancing<br />
+            <input type="checkbox" name="Dancing"> Hip Hop Dancing<br /> -->
         </div> <!-- /.search -->
 
     
@@ -149,7 +215,7 @@
 
                 <div class="col-xs-10 col-md-9 job-descrip">
 
-                    <h3><a href="#">Educate school children in Kenya about the causes and dangers of HIV/AIDS and disease prevention through storytelling</a></h3>
+                    <h3><a href="jobdescription.html">Educate school children in Kenya about the causes and dangers of HIV/AIDS and disease prevention through storytelling</a></h3>
 
                     <table>
                       <tr>
@@ -383,7 +449,33 @@
 
     </div>
     
-    <div class="col-xs-4">Column</div>
+    <div class="col-xs-4">
+
+      <ul class="social-channels">
+    <li class="facebook">
+        <a href="http://www.facebook.com/peacecorps" onclick="recordOutboundLink(this, 'SocialMedia', 'Link', 'Facebook', true);return false;" target="_blank">Facebook</a>
+    </li>
+    <li class="twitter">
+        <a target="_blank" href="http://twitter.com/peacecorps" onclick="recordOutboundLink(this, 'SocialMedia', 'Link', 'Twitter', true);return false;">Twitter</a>
+    </li>
+    <li class="youtube">
+        <a target="_blank" href="http://www.youtube.com/peacecorps" onclick="recordOutboundLink(this, 'SocialMedia', 'Link', 'YouTube', true);return false;">YouTube</a>
+    </li>
+    <li class="tumblr">
+        <a href="http://peacecorps.tumblr.com/" target="_blank" onclick="recordOutboundLink(this, 'SocialMedia', 'Link', 'Tumblr', true);return false;">Tumblr</a>
+    </li>
+    <li class="linkedin">
+        <a href="http://www.linkedin.com/company/peace-corps/careers" onclick="recordOutboundLink(this, 'SocialMedia', 'Link', 'Linkedin', true);return false;" target="_blank">Linkedin</a>
+    </li>
+    <li class="pinterest">
+        <a href="http://pinterest.com/peacecorps/" onclick="recordOutboundLink(this, 'SocialMedia', 'Link', 'Pinterest', true);return false;" target="_blank">Pinterest</a>
+    </li>
+    <li class="instagram">
+        <a href="http://instagram.com/peacecorps" onclick="recordOutboundLink(this, 'SocialMedia', 'Link', 'Instagram', true);return false;" target="_blank" class="">Instagram</a>
+    </li>
+</ul>
+
+    </div>
     
   </div>
 </div>

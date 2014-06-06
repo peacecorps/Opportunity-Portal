@@ -94,6 +94,8 @@ nav ul, nav ol {
 
 .navbar-nav.navbar-right {margin-top: 40px;}
 
+.navbar {margin-bottom: 0;}
+
 /* EXPLORATION PAGE */
 
 .search-results-map{margin-bottom:30px;}
@@ -139,7 +141,12 @@ nav ul, nav ol {
 .pagination > li > a:hover{
 	color:#00808d;
 }
-/* OPPORTUNITY PAGE */
+/* JOB DESCRIPTION PAGE */
+
+.job-image{
+	overflow:auto;
+	margin-bottom:25px;
+}
 
 .job-details ul{
 	background-color: #d1cdb2;
@@ -151,7 +158,7 @@ nav ul, nav ol {
 .job-details li {
 	display: inline;
 	padding:0 20px;
-	color:#fff;
+	color:#45413e;
 	font-weight:bold;
 	margin: 20px 0;
 }

@@ -9,6 +9,7 @@ class Opportunity(models.Model):
     start_date=models.DateTimeField('start_date') 
     apply_date=models.DateTimeField('apply_date')
     sector=models.CharField(max_length=200)
+    language=models.CharField(max_length=200)
     def __unicode__(self):
     	return (self.title,self.description)
     

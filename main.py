@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #!/usr/bin/env python
 #
 #  Opportunity Portal
@@ -6,11 +7,16 @@
 #
 #
 #  For Questions email:ktu219@gmail.com
-#
 
+# ------  Basic component ------
+from __future__ import with_statement
 import os
 import webapp2
 from google.appengine.ext.webapp import template
+
+# ------  GAE Datastore -----
+from google.appengine.ext import db
+import dbmodel
 
 class BaseHandler(webapp2.RequestHandler):
     def render_template(self, file, template_args):
@@ -46,6 +52,7 @@ class staticFileHandler(BaseHandler):
             self.render_template("404.html", dict())
             return
         self.render_template(filename, dict())
+
 
 app = webapp2.WSGIApplication([
     ('/', indexHandler),
